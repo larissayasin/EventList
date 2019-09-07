@@ -99,16 +99,19 @@
 
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/bt_details_checkin"
+                style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_8"
                 android:text="@string/check_in"
                 android:textColor="@android:color/white"
-                style="@style/Widget.MaterialComponents.Button"
                 app:backgroundTint="@color/colorPrimary"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_details_people"
+                app:layout_constraintVertical_bias="1.0" />
 
         <TextView
                 android:id="@+id/tv_details_date"
