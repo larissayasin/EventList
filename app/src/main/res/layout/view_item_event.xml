@@ -1,62 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="16dp"
-    android:clickable="true"
-    android:focusable="true"
-    android:foreground="?android:attr/selectableItemBackground">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginEnd="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_8"
+        android:layout_marginBottom="@dimen/margin_8"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/iv_item_event"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:contentDescription="@null"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/img_placeholder" />
+                android:id="@+id/iv_item_event"
+                android:layout_width="@dimen/image_view_size"
+                android:layout_height="@dimen/image_view_size"
+                android:layout_marginStart="@dimen/margin_8"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginBottom="@dimen/margin_8"
+                android:contentDescription="@null"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/lorem" />
 
         <TextView
-            android:id="@+id/tv_item_event_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="title"
-            style="@style/ItemTextTitle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/iv_item_event"
-            app:layout_constraintTop_toTopOf="parent" />
+                android:id="@+id/tv_item_event_title"
+                style="@style/ItemTextTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_8"
+                android:layout_marginEnd="@dimen/margin_8"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_item_event"
+                app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tv_item_event_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="date"
-            style="@style/ItemText"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/tv_item_event_price"
-            app:layout_constraintStart_toEndOf="@+id/iv_item_event"
-            app:layout_constraintTop_toBottomOf="@+id/tv_item_event_title"
-            app:layout_constraintVertical_bias="0.0" />
+                android:id="@+id/tv_item_event_date"
+                style="@style/ItemText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                app:layout_constraintEnd_toEndOf="@+id/tv_item_event_title"
+                app:layout_constraintStart_toStartOf="@+id/tv_item_event_title"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_event_title" />
 
         <TextView
-            android:id="@+id/tv_item_event_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="price"
-            style="@style/ItemText"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_item_event_date"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/tv_item_event_date"
-            app:layout_constraintTop_toTopOf="@+id/tv_item_event_date" />
+                android:id="@+id/tv_item_event_price"
+                style="@style/ItemText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginBottom="@dimen/margin_8"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/tv_item_event_date"
+                app:layout_constraintStart_toStartOf="@+id/tv_item_event_date"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_event_date"
+                app:layout_constraintVertical_bias="0.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>
