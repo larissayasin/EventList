@@ -52,12 +52,58 @@
                 app:layout_constraintTop_toBottomOf="@+id/iv_details" />
 
         <com.google.android.material.button.MaterialButton
+                android:id="@+id/bt_details_checkin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                app:backgroundTint="@color/colorPrimary"
+                android:text="@string/check_in"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+                android:id="@+id/tv_details_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="11/11/dd"
+                style="@style/DetailsSmallText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_details_description" />
+
+        <TextView
+                android:id="@+id/tv_details_price"
+                style="@style/DetailsSmallText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:text="TextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_details_date" />
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/bt_details_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/white"
-                android:text="@string/check_in"
-                android:background="@color/colorPrimaryDark"
-                android:id="@+id/bt_details_checkin"/>
-
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:background="@android:color/white"
+                android:textSize="12sp"
+                app:icon="@drawable/ic_place"
+                android:text="@string/show_location"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_details_price" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

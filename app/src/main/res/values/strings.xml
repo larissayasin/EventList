@@ -2,8 +2,12 @@
     <string name="app_name">EventList</string>
     <string name="loading">LOADING</string>
     <string name="error">Something went wrong :(</string>
-    <string name="details">Detalhes</string>
+    <string name="details">Details</string>
     <string name="events">Events</string>
     <string name="share">Share</string>
     <string name="check_in">Check-in</string>
+    <string name="show_location">Show location</string>
+    <string name="when_date">When: %1$s</string>
+    <string name="price_value">Price: %1$s</string>
+
 </resources>

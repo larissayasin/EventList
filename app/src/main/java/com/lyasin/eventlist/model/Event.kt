@@ -21,6 +21,7 @@ data class Event(
 
 
     fun convertedDate(): String {
+        if (date == 0L) return "not specified"
         val date = Date(date)
         val format = SimpleDateFormat("dd/MM/yyyy HH:mm", ApiConfig.LOCALE)
         return format.format(date)

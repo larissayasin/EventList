@@ -1,9 +1,11 @@
 package com.lyasin.eventlist.view.details
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
@@ -20,6 +22,8 @@ class DetailsActivity : AppCompatActivity() {
 
     private val vm : DetailsViewModel by viewModel()
 
+    private lateinit var event: Event
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
@@ -32,7 +36,8 @@ class DetailsActivity : AppCompatActivity() {
                 it.error != null -> errorSnackbar(this)
                 it.isSuccess -> {
                     if (it.data != null) {
-                        populateLayout(it.data)
+                        event = it.data
+                        populateLayout()
                     }
                 }
             }
@@ -40,11 +45,28 @@ class DetailsActivity : AppCompatActivity() {
 
     }
 
-    private fun populateLayout(e : Event){
-        tv_details_title.text = e.title
-        tv_details_description.text = e.description
-        Glide.with(this).load(e.image).placeholder(R.drawable.lorem)
+    private fun populateLayout(){
+        tv_details_title.text = event.title
+        tv_details_description.text = event.description
+        Glide.with(this).load(event.image).placeholder(R.drawable.lorem)
             .into(iv_details)
+
+        tv_details_date.text = getString(R.string.when_date, event.convertedDate())
+        tv_details_price.text = getString(R.string.price_value, event.priceCurrency())
+
+        if (event.latitude.isEmpty() || event.longitude.isEmpty()){
+            bt_details_location.visibility = View.GONE
+        }else {
+            bt_details_location.setOnClickListener {
+                val uri = "geo:${event.latitude},${event.longitude}"
+                startActivity(
+                    Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse(uri)
+                    )
+                )
+            }
+        }
     }
 
    override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -57,8 +79,8 @@ class DetailsActivity : AppCompatActivity() {
            R.id.menu_share -> {
                val sharingIntent = Intent(Intent.ACTION_SEND)
                sharingIntent.type = "text/plain"
-               val shareBodyText = "Check it out. Your message goes here"
-               sharingIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject here")
+               val shareBodyText = event.title
+               sharingIntent.putExtra(Intent.EXTRA_SUBJECT, event.description)
                sharingIntent.putExtra(Intent.EXTRA_TEXT, shareBodyText)
                startActivity(Intent.createChooser(sharingIntent, "Shearing Option"))
                true
