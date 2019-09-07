@@ -21,3 +21,9 @@ fun errorSnackbar(activity: Activity){
         activity.getString(R.string.error),
         Snackbar.LENGTH_SHORT).show()
 }
+
+fun checkinDoneSnackbar(activity: Activity){
+    Snackbar.make(activity.findViewById(android.R.id.content),
+        activity.getString(R.string.checkin_done),
+        Snackbar.LENGTH_SHORT).show()
+}

@@ -30,4 +30,7 @@
         <item name="android:textSize">12sp</item>
         <item name="android:fontFamily">sans-serif-light</item>
     </style>
+    <style name="DetailsSmallText.Title" parent="DetailsSmallText">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
 </resources>

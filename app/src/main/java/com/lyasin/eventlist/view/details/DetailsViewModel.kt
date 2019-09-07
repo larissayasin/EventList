@@ -24,4 +24,15 @@ class DetailsViewModel(private val repository: EventRepository) : ViewModel() {
             })
 
     }
+    fun checkin(id: String, name: String, email: String){
+        live.value = LiveUtil(isLoading = true)
+        val d = repository.checkin(id, name, email)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                live.value = LiveUtil(isSuccess = true)
+            }, { error ->
+                live.value = LiveUtil(error = error)
+            })
+    }
 }

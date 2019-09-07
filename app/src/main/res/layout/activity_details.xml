@@ -11,6 +11,54 @@
             android:layout_height="match_parent"
             tools:context=".view.details.DetailsActivity">
 
+        <TextView
+                android:id="@+id/tv_details_cupons"
+                style="@style/DetailsSmallText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:ellipsize="end"
+                android:lines="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_details_cupons_title"
+                app:layout_constraintTop_toTopOf="@+id/tv_details_cupons_title" />
+
+        <TextView
+                android:id="@+id/tv_details_people_title"
+                style="@style/DetailsSmallText.Title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_16"
+                android:text="@string/people"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_details_cupons" />
+
+        <TextView
+                android:id="@+id/tv_details_people"
+                style="@style/DetailsSmallText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:ellipsize="end"
+                android:lines="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_details_people_title"
+                app:layout_constraintTop_toTopOf="@+id/tv_details_people_title" />
+
+        <TextView
+                android:id="@+id/tv_details_cupons_title"
+                style="@style/DetailsSmallText.Title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_16"
+                android:text="@string/cupons"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bt_details_location" />
+
         <ImageView
                 android:id="@+id/iv_details"
                 android:layout_width="@dimen/image_view_size"
@@ -27,7 +75,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_16"
                 android:layout_marginEnd="@dimen/margin_16"
-                android:text="TextView"
                 android:textAppearance="@style/DetailsTitle"
                 app:layout_constraintBottom_toBottomOf="@+id/iv_details"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +90,6 @@
                 android:layout_marginTop="@dimen/margin_16"
                 android:layout_marginEnd="@dimen/margin_16"
                 android:fontFamily="sans-serif-condensed"
-                android:text="TextView"
                 android:textAlignment="viewStart"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -55,23 +101,23 @@
                 android:id="@+id/bt_details_checkin"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-                app:backgroundTint="@color/colorPrimary"
                 android:text="@string/check_in"
                 android:textColor="@android:color/white"
+                style="@style/Widget.MaterialComponents.Button"
+                app:backgroundTint="@color/colorPrimary"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
                 android:id="@+id/tv_details_date"
+                style="@style/DetailsSmallText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:text="11/11/dd"
-                style="@style/DetailsSmallText"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="@dimen/margin_16"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_details_description" />
@@ -81,10 +127,9 @@
                 style="@style/DetailsSmallText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:text="TextView"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginEnd="@dimen/margin_16"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_details_date" />
@@ -93,9 +138,9 @@
                 android:id="@+id/bt_details_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginEnd="@dimen/margin_16"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:background="@android:color/white"
                 android:textSize="12sp"

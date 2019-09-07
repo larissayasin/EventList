@@ -6,8 +6,14 @@
     <string name="events">Events</string>
     <string name="share">Share</string>
     <string name="check_in">Check-in</string>
+    <string name="check_in_title">Event check-in</string>
     <string name="show_location">Show location</string>
     <string name="when_date">When: %1$s</string>
     <string name="price_value">Price: %1$s</string>
-
+    <string name="cupons">Cupons:</string>
+    <string name="people">People:</string>
+    <string name="name">Name</string>
+    <string name="email">E-mail</string>
+    <string name="field_required">Field required</string>
+    <string name="checkin_done">Check-in Done :)</string>
 </resources>
