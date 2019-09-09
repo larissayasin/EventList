@@ -89,7 +89,10 @@ class DetailsUnitTest : KoinTest {
 
     @Test
     fun testCheckinEvent() {
-        Mockito.`when`(repository.checkin(eventId1, "a", "a@a.com")).thenReturn(Observable.empty())
+        val voidConstructor = Void::class.java.getDeclaredConstructor()
+        voidConstructor.isAccessible = true
+        val void = voidConstructor.newInstance()
+        Mockito.`when`(repository.checkin(eventId1, "a", "a@a.com")).thenReturn(Observable.just(void))
 
         detailsViewModel.live.observeForever(observer)
         detailsViewModel.checkin(eventId1, "a", "a@a.com")
