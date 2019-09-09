@@ -121,10 +121,8 @@ class DetailsActivity : AppCompatActivity() {
            R.id.menu_share -> {
                val sharingIntent = Intent(Intent.ACTION_SEND)
                sharingIntent.type = "text/plain"
-               val shareBodyText = event.title
-               sharingIntent.putExtra(Intent.EXTRA_SUBJECT, event.description)
-               sharingIntent.putExtra(Intent.EXTRA_TEXT, shareBodyText)
-               startActivity(Intent.createChooser(sharingIntent, "Shearing Option"))
+               sharingIntent.putExtra(Intent.EXTRA_TEXT, "${event.title} - ${event.convertedDate()}" )
+               startActivity(Intent.createChooser(sharingIntent, "Share option"))
                true
            }
 
